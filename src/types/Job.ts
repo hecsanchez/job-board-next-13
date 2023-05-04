@@ -7,6 +7,8 @@ export interface Job {
     category: string;
     published_on: string;
     location: string;
+    location_type: string;
+
     skills: string[];
     levels_of_experience: string[];
     company: Company;

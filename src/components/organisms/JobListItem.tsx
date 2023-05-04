@@ -3,17 +3,16 @@ import clsx from 'clsx';
 import {FC, useState} from 'react';
 import Image from "next/image";
 
-import { type JobPost as IJobPost } from '@/types';
+import { type Job } from '@/types';
 
-import locationIcon from '@/assets/location.svg';
-import clockIcon from '@/assets/clock.svg';
-import arrowRightIcon from '@/assets/arrow-right.svg';
+import locationIcon from '@/assets/svg/location.svg';
+import arrowRightIcon from '@/assets/svg/arrow-right.svg';
 
 import Link from "next/link";
 import CompanyLogo from "@/components/molecules/CompanyLogo";
 
 interface JobListItemProps {
-    data: IJobPost;
+    data: Job;
 }
 
 const JobListItem: FC<JobListItemProps> = ({ data }) => {
@@ -23,7 +22,7 @@ const JobListItem: FC<JobListItemProps> = ({ data }) => {
             <Link href={`/jobs/${data.id}`} className={clsx('rounded-lg py-5 pl-5 pr-8 mb-3 text-left border cursor-pointer flex justify-between items-center group hover:shadow-[0px_5px_24px_rgba(88,46,255,0.1)] transition hover:border-primary')}>
                 <div className="flex gap-3">
                     <div className="rounded-lg h-20 w-20 overflow-hidden">
-                        <CompanyLogo data={data}/>
+                        {/*<CompanyLogo data={data}/>*/}
                     </div>
                     <div className="flex flex-col gap-1">
                         <div>

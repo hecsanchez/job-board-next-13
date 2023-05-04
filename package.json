@@ -25,6 +25,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@mocks-server/main": "^4.0.1"
+    "@mocks-server/main": "^4.0.1",
+    "node-mock-server": "^0.25.4"
   }
 }

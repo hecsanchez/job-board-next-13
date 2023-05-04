@@ -1,4 +1,4 @@
 import api from "@/services/config";
-
-export const getJobs = async () => await api.get('/api/jobs');
+import jobs from '../../mock/jobs.json';
+export const getJobs = () => jobs;
 export const getJobById = async (id: string) => await api.get(`/api/jobs/${id}`);

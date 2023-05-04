@@ -1,6 +1,17 @@
 import Header from "@/components/organisms/Header";
+import JobsList from "@/components/organisms/JobsList";
+import {getJobs} from "@/services/jobs";
+import {NextPage} from "next";
+import {Job} from "@/types";
 
-const ListingsPage = () => {
+async function getData() {
+    const jobsRes = await getJobs();
+
+    return jobsRes;
+}
+export default async function ListingsPage() {
+
+    const res = await getData();
 
   return (
       <>
@@ -10,11 +21,10 @@ const ListingsPage = () => {
             <h2 className="text-3xl sm:text-5xl font-bold leading-4xl mb-5">Find the job you are looking for</h2>
           </div>
           <div className="max-w-5xl w-full">
-
+              <JobsList jobs={res.data} />
           </div>
         </main>
       </>
   )
 }
 
-export default ListingsPage;

@@ -1,30 +1,17 @@
 import {getJobs} from '@/services/jobs';
-import JobListItem from "@/components/JobListItem";
-import { type JobPost as IJobPost } from '@/types';
+import JobListItem from "@/components/organisms/JobListItem";
+import { type Job } from '@/types';
+import {FC} from "react";
 
-async function getData() {
-    const jobsRes = await getJobs();
-
-    if (!jobsRes.ok) {
-        throw new Error('Failed to fetch data');
-    }
-
-    return jobsRes.json();
+interface JobsListProps {
+    jobs: Job[];
 }
 
-const JobsList = async () => {
-    const { jobs, featuredJobs } = await getData();
-    console.log('jobs', jobs)
-    console.log('featuredJobs', featuredJobs)
-
-    const isFeatured = (jobId: string): boolean => {
-        return featuredJobs.includes(jobId);
-    }
-
+const JobsList: FC<JobsListProps> = ({ jobs }) => {
     return (
         <div className="mt-8">
-            {jobs.map((job: IJobPost)=>(
-                <JobListItem key={job.id} data={job} featured={isFeatured(job.sid)}/>
+            {jobs.map((job: Job)=>(
+                <JobListItem key={job.id} data={job}/>
             ))}
         </div>
     )
