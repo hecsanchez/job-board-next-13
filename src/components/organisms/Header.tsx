@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="items-center sticky top-0 bg-white">
             <div className="max-w-[1400px] flex justify-center py-3 sm:py-6 m-auto px-3 items-center">
-                <Link href='/'><Image src={logo} className="w-12 sm:w-44" alt="unitrabajos-logo"/></Link>
+                <Link href='/'><Image src={logo} className="w-12" alt="unitrabajos-logo"/></Link>
                 <h1 className="text-xl font-bold ml-2">Fantastic jobs</h1>
             </div>
         </div>

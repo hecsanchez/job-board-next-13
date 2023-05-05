@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p {
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: initial;
+    padding-left: 1em;
+}
